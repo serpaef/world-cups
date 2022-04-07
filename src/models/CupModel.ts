@@ -8,6 +8,11 @@ class CupModel {
     const cups = await this.cupModel.find();
     return cups;
   }
+
+  public async getByYear(year: number): Promise<ICup | null> {
+    const cup = await this.cupModel.findOne({year});
+    return cup;
+  }
 }
 
 export default CupModel;
