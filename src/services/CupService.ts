@@ -13,6 +13,11 @@ class CupService {
     const cup = await this.cupModel.getByYear(year);
     return cup;
   }
+
+  public async create(cup:ICup): Promise<ICup> {
+    const newCup = await this.cupModel.create(cup);
+    return newCup;
+  }
 }
 
 export default CupService;
