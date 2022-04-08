@@ -13,6 +13,12 @@ class CupModel {
     const cup = await this.cupModel.findOne({year});
     return cup;
   }
+
+  public async create(cup: ICup): Promise<ICup> {
+    const newCup = await this.cupModel.create(cup);
+    newCup.save();
+    return newCup;
+  }
 }
 
 export default CupModel;
